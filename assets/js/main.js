@@ -34,5 +34,18 @@
     gallery.addEventListener('focusin', stop); gallery.addEventListener('focusout', start);
     start();
   }
-  document.addEventListener('DOMContentLoaded', () => { initAgeGate(); initNav(); initReveals(); initGallerySlideshow(); });
+  function initHeroSlideshow() {
+    const hero = $('#hero-image'); if (!hero) return;
+    const gallerySources = $$('.gallery img').map((image) => ({ src: image.getAttribute('src'), alt: image.getAttribute('alt') })).filter((image) => image.src);
+    const sources = [{ src: hero.getAttribute('src'), alt: hero.getAttribute('alt') }, ...gallerySources.filter((image) => image.src !== hero.getAttribute('src'))];
+    if (sources.length < 2) return;
+    let index = 0;
+    window.setInterval(() => {
+      index = (index + 1) % sources.length;
+      const next = sources[index];
+      hero.classList.add('is-changing');
+      window.setTimeout(() => { hero.src = next.src; hero.alt = next.alt; hero.classList.remove('is-changing'); }, 220);
+    }, 6000);
+  }
+  document.addEventListener('DOMContentLoaded', () => { initAgeGate(); initNav(); initReveals(); initGallerySlideshow(); initHeroSlideshow(); });
 })();
