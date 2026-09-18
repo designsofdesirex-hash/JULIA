@@ -1,0 +1,19 @@
+{
+  "name": "lady-chooloub-official",
+  "version": "1.0.0",
+  "description": "Lady Chooloub — classy high heels and nylons",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "lady-chooloub",
+    "editorial-web-design",
+    "femdom",
+    "luxury-portfolio"
+  ],
+  "author": "Lady Chooloub",
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -1,0 +1,37 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Editor & IDE Configuration
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Dependencies & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Logs
+.env
+.env.local
+.env.*.local
+*.log
+
+# Local Development & Agent Tooling
+.agents/
+.codex/
+
+# Raw Uncompressed Image Originals (WebP used in production)
+assets/img/*.jpg
+assets/img/*.jpeg
+*.jpg
+*.jpeg
+

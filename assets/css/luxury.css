@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+:root{--ink:#080608;--paper:#f8f0e7;--wine:#70142d;--red:#cc4057;--gold:#e4b872;--muted:#c4b3aa;--line:rgba(248,240,231,.2)}
+.overline{ text-transform:none!important;letter-spacing:.06em!important}.button,.text-link,.site-header nav{ text-transform:none!important;letter-spacing:.04em!important}.nav-drawer nav{font-family:'Bodoni Moda',serif!important;text-transform:none!important}.nav-drawer__close{font-family:'Manrope',sans-serif!important}
+.statement--quote .statement__grid{align-items:end}.julia-quote{margin:0;max-width:54rem}.julia-quote p{margin:0;font:500 clamp(2.2rem,4.5vw,4.8rem)/1.02 'Bodoni Moda',serif;letter-spacing:-.035em;color:#0b0809}.julia-quote p::first-letter{color:var(--wine)}.julia-quote cite{display:block;margin-top:2.4rem;color:var(--wine);font:italic 1.2rem 'Bodoni Moda',serif}@media (max-width:800px){.julia-quote p{font-size:clamp(2rem,9.5vw,3.4rem);line-height:1.04}.julia-quote cite{margin-top:1.6rem}}
+body{background:linear-gradient(180deg,#080608 0%,#10070c 38%,#080608 100%);color:var(--paper);font-family:'Manrope',sans-serif}
+.site-header{background:linear-gradient(180deg,rgba(8,6,8,.86),rgba(8,6,8,0));backdrop-filter:blur(8px)}
+.brand-name{font-family:'Bodoni Moda',serif!important;font-weight:500!important;letter-spacing:.015em!important;color:#fff7ee!important}
+.overline,.link-list__number,figcaption{font-family:'Space Mono',monospace!important;color:#e8bb75!important;letter-spacing:.15em}
+.button,.text-link,.site-header nav{font-family:'Manrope',sans-serif!important}
+.hero{position:relative;isolation:isolate;background:linear-gradient(115deg,#09070a 0%,#14080e 48%,#090608 100%)!important}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 14% 80%,rgba(119,17,48,.42),transparent 38%),radial-gradient(ellipse at 78% 32%,rgba(182,112,54,.12),transparent 30%),linear-gradient(135deg,transparent 0 47%,rgba(255,255,255,.025) 47.2%,transparent 47.5% 100%)}
+.hero h1,.statement h2,.section-heading h2,.links__intro h2,.link-list strong,.footer__brand strong,.age-gate__panel h2,.statement__aside-note,.terms strong,.signature,.gallery figcaption span{font-family:'Bodoni Moda',serif!important;font-weight:500;letter-spacing:-.02em}
+.hero h1{letter-spacing:-.03em!important}.hero__lead,.body-copy,.link-list small,.footer__brand span:not(.brand__mark){font-family:'Manrope',sans-serif!important;color:var(--muted)}
+.hero__lead strong{color:#fff7ee}.hero__portrait-frame{background:linear-gradient(145deg,#211016,#0e090c 70%);border-color:rgba(228,184,114,.28);box-shadow:0 24px 70px rgba(0,0,0,.34)}
+.statement{background:linear-gradient(135deg,#fbf3e9 0%,#f2e7dc 54%,#e8d7ca 100%);color:#0b0809}.statement__rule{background:rgba(112,20,45,.24)}.statement .body-copy{color:#5d4e4a}.statement__aside-note,.statement h2 em,.statement h2 em,.terms strong{color:var(--wine)!important}
+.tribute{background:linear-gradient(180deg,#0a0709 0%,#17090f 52%,#0b070a 100%)}
+.gallery figure{background:#170a10;box-shadow:0 18px 48px rgba(0,0,0,.24)}.gallery img{filter:saturate(.9) contrast(1.04)}
+.links{background:linear-gradient(135deg,#210b14 0%,#11070c 48%,#080608 100%);position:relative}.links::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(228,184,114,.08),transparent 35%)}.links>*{position:relative}.link-list{border-color:rgba(228,184,114,.25)}.link-list>a{border-color:rgba(228,184,114,.2)}.link-list>a:hover{color:#f1c87f}.link-list__number{color:#e4b872!important}
+footer{background:#070507;border-top:1px solid rgba(228,184,114,.2)}
+@media (max-width:800px){.site-header{background:linear-gradient(180deg,rgba(8,6,8,.92),rgba(8,6,8,.08))}.hero::before{background:radial-gradient(ellipse at 30% 58%,rgba(119,17,48,.38),transparent 48%),linear-gradient(135deg,transparent 0 48%,rgba(255,255,255,.025) 48.2%,transparent 48.5% 100%)}.hero h1{letter-spacing:-.025em!important}}
+
+/* Gallery: consistent editorial tiles, with no orphaned gaps on narrow screens. */
+.tribute .section-heading{display:block;margin-bottom:3.5rem}.tribute .section-heading h2{max-width:30rem;margin:0}
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:1rem;grid-auto-flow:row}.gallery figure,.gallery figure:nth-child(2),.gallery figure:nth-child(3),.gallery figure:nth-child(4),.gallery figure:nth-child(5){grid-column:auto;grid-row:auto;aspect-ratio:4 / 5}.gallery figure.gallery__feature{grid-column:span 2;aspect-ratio:8 / 5}.gallery figure img{height:100%;object-fit:cover}
+@media (max-width:800px){.tribute .section-heading{margin-bottom:2rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.gallery figure,.gallery figure.gallery__feature{grid-column:auto;aspect-ratio:4 / 5}.gallery figure:nth-child(5n){grid-column:span 2;aspect-ratio:8 / 5}}
+.statement--quote .statement__grid{display:block;max-width:64rem;margin:0 auto}.statement--quote .julia-quote{max-width:58rem}.gallery img{opacity:1;transition:opacity 220ms ease,transform 700ms var(--ease),filter 700ms ease}.gallery img.is-changing{opacity:.08}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
