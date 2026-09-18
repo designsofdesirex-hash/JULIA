@@ -22,13 +22,14 @@
     const gallery = $('.gallery'); if (!gallery) return;
     const figures = $$('.gallery figure img', gallery); if (figures.length < 2) return;
     const sources = figures.map((image) => ({ src: image.getAttribute('src'), alt: image.getAttribute('alt') }));
-    let offset = 0; let timer;
-    const render = () => figures.forEach((image, index) => {
-      const next = sources[(index + offset) % sources.length];
+    const randomSource = (current) => { const available = sources.filter((source) => source.src !== current); return available[Math.floor(Math.random() * available.length)]; };
+    const render = () => figures.forEach((image) => {
+      const next = randomSource(image.getAttribute('src'));
       image.classList.add('is-changing');
       window.setTimeout(() => { image.src = next.src; image.alt = next.alt; image.classList.remove('is-changing'); }, 220);
     });
-    const start = () => { window.clearInterval(timer); timer = window.setInterval(() => { offset = (offset + 1) % sources.length; render(); }, 6000); };
+    render();
+    let timer; const start = () => { window.clearInterval(timer); timer = window.setInterval(render, 6000); };
     const stop = () => window.clearInterval(timer);
     gallery.addEventListener('mouseenter', stop); gallery.addEventListener('mouseleave', start);
     gallery.addEventListener('focusin', stop); gallery.addEventListener('focusout', start);
@@ -39,13 +40,14 @@
     const gallerySources = $$('.gallery img').map((image) => ({ src: image.getAttribute('src'), alt: image.getAttribute('alt') })).filter((image) => image.src);
     const sources = [{ src: hero.getAttribute('src'), alt: hero.getAttribute('alt') }, ...gallerySources.filter((image) => image.src !== hero.getAttribute('src'))];
     if (sources.length < 2) return;
-    let index = 0;
-    window.setInterval(() => {
-      index = (index + 1) % sources.length;
-      const next = sources[index];
+    const randomSource = (current) => { const available = sources.filter((source) => source.src !== current); return available[Math.floor(Math.random() * available.length)]; };
+    const setRandomHero = () => {
+      const next = randomSource(hero.getAttribute('src'));
       hero.classList.add('is-changing');
       window.setTimeout(() => { hero.src = next.src; hero.alt = next.alt; hero.classList.remove('is-changing'); }, 220);
-    }, 6000);
+    };
+    setRandomHero();
+    window.setInterval(setRandomHero, 6000);
   }
   document.addEventListener('DOMContentLoaded', () => { initAgeGate(); initNav(); initReveals(); initGallerySlideshow(); initHeroSlideshow(); });
 })();
